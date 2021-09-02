@@ -1,0 +1,39 @@
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          953 GB  2048 KB        *
+  Disk 1    No Media           0 B      0 B
+  Disk 2    No Media           0 B      0 B
+  Disk 3    Online           29 GB      0 B
+  Disk 4    No Media           0 B      0 B
+  Disk 5    No Media           0 B      0 B
+
+DISKPART> select disk 3
+
+Disk 3 is now the selected disk.
+
+DISKPART> clean
+
+DiskPart succeeded in cleaning the disk.
+
+DISKPART> create partition primary
+
+DiskPart succeeded in creating the specified partition.
+
+DISKPART> format fs=ntfs label=Data quick
+
+  100 percent completed
+
+DiskPart successfully formatted the volume.
+
+DISKPART> assign letter=G
+
+DiskPart successfully assigned the drive letter or mount point.
+
+DISKPART> exit
+
+Leaving DiskPart...
+
+C:\WINDOWS\system32>

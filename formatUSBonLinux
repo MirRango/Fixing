@@ -1,0 +1,70 @@
+Introduction
+
+Occasionally, it is necessary to format the USB drive (for example, when changing the file system or deleting data). However, many Linux users are afraid to start the formatting process, thinking it is either a very complicated or time-consuming task.
+
+
+Using three quick and simple methods
+    Terminal
+    Disk Utility
+    GParted tool
+    
+    
+Prerequisites  
+	A system running Linux
+	A USB drive
+	Access to the terminal/command line
+	A user account with sudo/root privilege
+	
+	
+	
+Which File System to Use for USB Formatting?
+    FAT32
+    NTFS
+    exFAT
+
+Method 2:
+	Let's do it by Terminal
+
+To list usb or harddisk drives
+	df or lsblk 
+
+
+Unmount and Format USB Drive
+	sudo umount /dev/sdb1
+	
+To format a USB drive with FAT32 file system, use:
+
+	sudo mkfs.vfat /dev/sdb1
+
+To format a USB drive using the NTFS file system run:
+
+	sudo mkfs.ntfs /dev/sdb1
+
+To format a USB drive in accordance with the exFAT file system use:
+
+	sudo mkfs.exfat /dev/sdb1
+	
+
+Verify USB Drive Formatting
+	sudo fsck /dev/sdb1
+
+To mount this usd=sdb1
+	Create a folder like: sudo mkdir /Test
+	And mount the sdb1 to folder like: sudo mount /dev/sdb1 /Test
+	Now you can use the usbdrive.
+	
+	
+Method 2: Open Disk Utility
+To open the Disk Utility:
+
+    Launch the Application menu.
+    Type “disk” in the search bar.
+    Click the Disks icon and ....
+    
+    
+Method 3: Format USB Using GParted Tool
+	sudo apt install gparted
+	 
+Run the GParted tool with
+	sudo gparted
+ 
